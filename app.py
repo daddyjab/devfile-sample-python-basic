@@ -7,7 +7,7 @@ app = Flask(__name__)
 def hello():
     return "Hello World!"
 
-#app.route('/demo')
+@app.route('/demo')
 def demo_the_site():
     return "This is a demo of the site"
 
