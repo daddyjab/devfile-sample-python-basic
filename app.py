@@ -3,9 +3,25 @@ import os
 
 app = Flask(__name__)
 
-@app.route('/<webarg>')
-def hello(webarg):
-    return f"Web Arg is: '{webarg}'"
+@app.route('/')
+def mainpage():
+    return f"This is the main page"
+
+@app.route('/hello')
+def sayhello():
+    return f"Hello to anyone"
+
+@app.route('/hello/<webarg>')
+def sayhelloperson(webarg):
+    return f"Hello to '{webarg}'"
+
+@app.route('/bye')
+def saybye(webarg):
+    return f"Goodbye to anyone"
+
+@app.route('/bye/<webarg>')
+def saybyeperson(webarg):
+    return f"Goodbye to '{webarg}'"
 
 if __name__ == '__main__':
     port = os.environ.get('FLASK_PORT') or 8080
