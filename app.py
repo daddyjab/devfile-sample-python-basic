@@ -16,7 +16,7 @@ def sayhelloperson(webarg):
     return f"Hello to '{webarg}'"
 
 @app.route('/bye')
-def saybye(webarg):
+def saybye():
     return f"Goodbye to anyone"
 
 @app.route('/bye/<webarg>')
